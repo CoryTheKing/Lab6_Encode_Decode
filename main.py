@@ -31,11 +31,11 @@ def main():
             output = encode(password)
             print("Your password has been encoded and stored!")
         elif user_input == "2":
-            print(f"The encoded password is {output}, and the original password is {password}")
+            print(f"The encoded password is {output}, and the original password is {decode(password)}")
         elif user_input == "3":
             break
         else:
-            exit(0)
+            print("Invalid input.")
 
 if __name__ == "__main__":
     main()
