@@ -8,6 +8,15 @@ def encode(password):
             raise ValueError("input string contains non-digit characters!")
     return ''.join(result)
 
+def decode(password):
+    result = []
+    for char in password:
+        if char.isdigit():
+            new_digit = (int(char) - 3) % 10
+            result.append(str(new_digit))
+        else:
+            raise ValueError("input string contains non-digit characters!")
+    return ''.join(result)
 
 def main():
     while True:
@@ -25,7 +34,8 @@ def main():
             print(f"The encoded password is {output}, and the original password is {password}")
         elif user_input == "3":
             break
-
+        else:
+            exit(0)
 
 if __name__ == "__main__":
     main()
